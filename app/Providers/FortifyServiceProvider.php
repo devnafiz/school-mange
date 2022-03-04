@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Actions\AttemptToAuthenticate;
+use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+use Illuminate\Contracts\Auth\StatefulGuard;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -21,7 +25,11 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+         $this->app->when([AdminController::class,AttemptToAuthenticate::class,RedirectIfTwoFactorAuthenticatable::class])
+          ->needs(StatefulGuard::class)
+          ->give(function(){
+            return Auth::guard('admin');
+          });
     }
 
     /**
