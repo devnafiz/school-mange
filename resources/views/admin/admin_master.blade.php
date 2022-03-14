@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
-  <title>User - Dashboard</title>
+  <title>Admin - Dashboard</title>
   <link href="{{asset('userbackend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/css/ruang-admin.min.css')}}" rel="stylesheet">
@@ -308,7 +308,7 @@
           </div>
 
         <!--main -->
-           @yield('user')
+           @yield('admin')
         <!--main end-->
 
         </div>

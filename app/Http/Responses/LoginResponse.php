@@ -1,4 +1,4 @@
-LoginResponse<?php
+<?php
 
 namespace App\Http\Responses;
 
