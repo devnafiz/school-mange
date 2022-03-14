@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,9 @@ Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', f
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     return view('user.index');
 })->name('dashboard');
+
+
+
+//user logout
+
+  Route::get('/user/logout',[MainUserController::class,'logout'])->name('user.logout');
