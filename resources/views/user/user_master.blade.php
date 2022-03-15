@@ -12,6 +12,8 @@
   <link href="{{asset('userbackend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/css/ruang-admin.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css
+">
 </head>
 
 <body id="page-top">
@@ -274,7 +276,7 @@
                 <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{route('user.profile')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -282,9 +284,9 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{route('user.password.view')}}">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
+                 Change Password
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{route('user.logout')}}">
@@ -319,7 +321,7 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a href="#" target="_blank">Nafiz</a></b>
             </span>
           </div>
         </div>
@@ -339,6 +341,7 @@
   <script src="{{asset('userbackend/js/ruang-admin.min.js')}}"></script>
   <script src="{{asset('userbackend/vendor/chart.js/Chart.min.js')}}"></script>
   <script src="{{asset('userbackend/js/demo/chart-area-demo.js')}}"></script>  
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 
 </html>

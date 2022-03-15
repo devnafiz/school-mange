@@ -43,6 +43,10 @@ Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function 
 //user logout
 
   Route::get('/user/logout',[MainUserController::class,'logout'])->name('user.logout');
+  Route::get('/user/profile',[MainUserController::class,'Userprofile'])->name('user.profile');
+  Route::get('/user/profile/edit',[MainUserController::class,'UserprofileEdit'])->name('user.profile.edit');
+  Route::get('/user/password',[MainUserController::class,'UserPassword'])->name('user.password.view');
+  Route::post('/user/password/update',[MainUserController::class,'UserPasswordUpdate'])->name('password.update');
 
 //admin logout
   Route::get('/admin/logout',[AdminController::class,'destroy'])->name('admin.logout');
