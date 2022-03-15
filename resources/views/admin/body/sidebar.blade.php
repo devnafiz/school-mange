@@ -3,7 +3,7 @@
         <div class="sidebar-brand-icon">
           <img src="{{asset('userbackend/img/logo/logo2.png')}}">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3">Admin</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -33,26 +33,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="forms.html">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Forms</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-          aria-controls="collapseTable">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
-        </a>
-        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="simple-tables.html">Simple Tables</a>
-            <a class="collapse-item" href="datatables.html">DataTables</a>
-          </div>
-        </div>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="ui-colors.html">
           <i class="fas fa-fw fa-palette"></i>
@@ -79,13 +60,8 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
+      
       <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
+     
     </ul>
     <!-- Sidebar -->
