@@ -13,6 +13,6 @@ class MainUserController extends Controller
 
         Auth::logout();
 
-        return redirect()->route('login');
+        return Redirect()->route('login');
     }
 }
