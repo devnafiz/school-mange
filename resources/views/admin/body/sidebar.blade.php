@@ -15,6 +15,22 @@
       <div class="sidebar-heading">
         Features
       </div>
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage1" aria-expanded="true"
+          aria-controls="collapsePage">
+          <i class="fas fa-fw fa-columns"></i>
+          <span>Manage User</span>
+        </a>
+        <div id="collapsePage1" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+          
+            <a class="collapse-item" href="{{route('view.user')}}">View User</a>
+            <a class="collapse-item" href="register.html">Add User</a>
+            
+          </div>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">

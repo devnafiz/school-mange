@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainUserController;
 
+use App\Http\Controllers\Backend\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +52,13 @@ Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function 
 
 //admin logout
   Route::get('/admin/logout',[AdminController::class,'destroy'])->name('admin.logout');
+
+
+//user management  all Route
+
+
+
+Route::prefix('users')->group(function(){
+    Route::get('/view',[UserController::class,'UserView'])->name('view.user');
+
+});
