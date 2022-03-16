@@ -14,4 +14,5 @@ class UserController extends Controller
       $allData=User::all();
 
       return view('backend.user.view_user',compact('allData'));
+  }
 }
