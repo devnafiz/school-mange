@@ -26,7 +26,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
           
             <a class="collapse-item" href="{{route('view.user')}}">View User</a>
-            <a class="collapse-item" href="register.html">Add User</a>
+            <a class="collapse-item" href="{{route('users.add')}}">Add User</a>
             
           </div>
         </div>

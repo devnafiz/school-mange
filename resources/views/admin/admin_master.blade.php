@@ -13,6 +13,8 @@
   <link href="{{asset('userbackend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/css/ruang-admin.min.css')}}" rel="stylesheet">
    <link href="{{asset('userbackendvendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css
+">
 </head>
 
 <body id="page-top">
@@ -70,8 +72,80 @@
       $('#dataTableHover').DataTable(); // ID From dataTable with Hover
     });
   </script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript">
+    
+    $(function(){
+
+      $(document).on('click','#delete',function(e){
+
+        e.preventDefault();
+        var link =$(this).attr("href");
+
+
+                     Swal.fire({
+            title: 'Are you sure?',
+            text: "Delete This Data!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = link
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+
+
+
+
+
+      });
+    });
+  </script>
+<!-- Include a required theme -->
+<link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+
   <script src="{{asset('userbackend/vendor/chart.js/Chart.min.js')}}"></script>
   <script src="{{asset('userbackend/js/demo/chart-area-demo.js')}}"></script>  
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   
+
+  <script>
+      @if(Session::has('message'))
+  
+    var type ="{{Session::get('alert-type','info')}}"
+
+    switch(type){
+         case 'info':
+         toastr.info(" {{Session::get('message') }}");
+         break;
+
+         case 'success':
+         toastr.success(" {{Session::get('message') }}");
+         break;
+
+         case 'warning':
+         toastr.warning(" {{Session::get('message') }}");
+         break;
+
+         case 'error'
+         toastr.error("{{Session::get('message')}}");
+         break;
+
+    }
+   
+     @endif
+  </script>
+  
 </body>
 
 </html>

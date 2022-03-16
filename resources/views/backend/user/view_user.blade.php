@@ -42,7 +42,7 @@
                         <td>{{$data->email}}</td>
                         <td>{{$data->usertype}}</td>
                         <td>2011/04/25</td>
-                        <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                        <td><a href="{{route('users.edit',$data->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('users.delete',$data->id)}}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
                       </tr>
                       
                      @endforeach
