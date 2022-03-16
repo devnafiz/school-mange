@@ -4,8 +4,13 @@
 
 <div class="row mb-3">
 	<div class="col-md-12 mb-4">
+
 	<div class="card">
 		<div class="card-body">
+			<div class="box">
+			<a href="{{route('users.add')}}" class="btn btn-success">Add User</a>
+			
+		</div>
 			 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
@@ -13,9 +18,9 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Age</th>
+                        <th>User Type</th>
                         <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <!-- <tfoot>
@@ -35,9 +40,9 @@
                         <td>{{$k+1}}</td>
                         <td>{{$data->name}}</td>
                         <td>{{$data->email}}</td>
-                        <td>61</td>
+                        <td>{{$data->usertype}}</td>
                         <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                       </tr>
                       
                      @endforeach

@@ -61,4 +61,7 @@ Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function 
 Route::prefix('users')->group(function(){
     Route::get('/view',[UserController::class,'UserView'])->name('view.user');
 
+   Route::get('/add',[UserController::class,'UserAdd'])->name('users.add');
+   Route::post('/store',[UserController::class,'UserStore'])->name('users.store');
+
 });
