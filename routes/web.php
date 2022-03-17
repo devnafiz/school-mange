@@ -7,6 +7,9 @@ use App\Http\Controllers\MainUserController;
 
 use App\Http\Controllers\Backend\UserController;
 
+use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\StudentClassController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,5 +71,31 @@ Route::prefix('users')->group(function(){
     Route::post('/update/{id}',[UserController::class,'UserUpdate'])->name('users.update');
 
      Route::get('/delete/{id}',[UserController::class,'UserDelete'])->name('users.delete');
+
+});
+
+
+Route::prefix('profiles')->group(function(){
+
+
+    Route::get('/view',[ProfileController::class,'ViewProfile'])->name('profile.view');
+
+    Route::get('/add',[UserController::class,'UserAdd'])->name('users.add');
+    Route::post('/store',[UserController::class,'UserStore'])->name('users.store');
+
+    Route::get('/edit/{id}',[UserController::class,'UserEdit'])->name('users.edit');
+    Route::post('/update/{id}',[UserController::class,'UserUpdate'])->name('users.update');
+
+    Route::get('/delete/{id}',[UserController::class,'UserDelete'])->name('users.delete');
+
+
+
+});
+
+
+
+Route::prefix('setups')->group(function(){
+   Route::get('/student/class/view',[StudentClassController::class,'ViewStudent'])->name('student.class.view');
+
 
 });
