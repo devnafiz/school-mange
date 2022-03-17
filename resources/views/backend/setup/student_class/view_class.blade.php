@@ -5,7 +5,9 @@
  <div class="row">
  	<div class="col-md-12 col-lg-12">
  		<div class="card">
+
  			<div class="card-body">
+ 				<a href="{{route('studen.class.add')}} " class="btn btn-success">Add student Class</a>
  				 <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
@@ -33,7 +35,7 @@
                         <td>{{$class->name}}</td>
                        
                        
-                        <td><a href="{{route('users.edit',$class->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('users.delete',$class->id)}}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
+                        <td><a href="{{route('student.class.edit',$class->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('student.class.delete',$class->id)}}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
                       </tr>
                       
                      @endforeach
