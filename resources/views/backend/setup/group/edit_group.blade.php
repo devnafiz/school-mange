@@ -8,10 +8,10 @@
 	<div class="card">
 		<div class="card-body">
 			<div class="box">
-			<a href="{{route('student.year.view')}}" class="btn btn-success">Student Year List</a>
+			
 			
 		</div>
-            <form method="POST" action="{{route('store.student.year')}}">
+            <form method="POST" action="{{route('update.student.group',$editData->id)}}">
               @csrf
                     
 
@@ -19,9 +19,9 @@
                       <div class="row">
                       <div class="col-lg-6">
                         <div class="form-group">
-                          <label for="exampleFormControlInput1">Year Name</label>
+                          <label for="exampleFormControlInput1">Group Name</label>
                           <input type="text" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Student Year Name" name="name">
+                           name="name" value="{{$editData->name}}">
                         </div>
                         
                       </div>
@@ -41,7 +41,7 @@
                    
                     
                    
-                    <input type="submit" value="submit" class="btn btn-success">
+                    <input type="submit" value="Update" class="btn btn-success">
                     
                    
                   </form>
