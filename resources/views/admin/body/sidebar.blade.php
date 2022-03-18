@@ -66,7 +66,7 @@
             <a class="collapse-item" href="{{route('student.year.view')}}">Student Year View</a>
             <a class="collapse-item" href="{{route('student.group.view')}}">Student Group View</a>
             <a class="collapse-item" href="{{route('student.shift.view')}}">Student Shift View</a>
-            <a class="collapse-item" href="popovers.html">Popovers</a>
+            <a class="collapse-item" href="{{route('fee.category.view')}}">Fee Category</a>
             <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
           </div>
         </div>
