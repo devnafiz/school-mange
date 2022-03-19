@@ -32,10 +32,10 @@
                       @foreach($allData as $k=>$amount)
                       <tr>
                         <td>{{$k+1}}</td>
-                        <td>{{$amount->fee_category_id}}</td>
+                        <td>{{$amount['fee_category']['name']}}</td>
                        
                        
-                        <td><a href="{{route('fee.category.edit',$amount->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('fee.category.delete',$amount->id)}}" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
+                        <td><a href="{{route('fee.amount.edit',$amount->fee_category_id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('fee.amount.details',$amount->fee_category_id)}}" class="btn btn-danger" id="delete1"><i class="fa fa-eye"></i></a></td>
                       </tr>
                       
                      @endforeach
