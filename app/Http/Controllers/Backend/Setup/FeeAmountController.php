@@ -66,4 +66,33 @@ class FeeAmountController extends Controller
 
     return view('backend.setup.fee_amount.edit_fee_amount',$data);
    }
+
+   public function UpdateFeeAmount(Request $request,$fee_category_id){
+
+      if($request->class_id == NUll){
+          return redirect()->route('fee.amount.edit',$fee_category_id);
+      }else{
+          
+          $countClass= count($request->class_id);
+
+             FeeCategoryAmount::where('fee_category_id',$fee_category_id)->delete();
+         
+           for ($i=0; $i < $countClass; $i++) { 
+               $fee = new FeeCategoryAmount();
+
+               $fee->fee_category_id =$request->fee_category_id;
+               $fee->class_id =$request->class_id[$i];
+               $fee->amount =$request->amount[$i];
+
+               $fee->save();
+
+
+
+
+           } //forloop
+
+      
+      }//else
+      return redirect()->route('fee.amount.view');
+   }
 }

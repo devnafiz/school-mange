@@ -13,7 +13,7 @@
 			<a href="{{route('fee.amount.view')}}" class="btn btn-success">Student Fee  Amount List</a>
 			
 		</div>
-            <form method="POST" action="">
+            <form method="POST" action="{{route('update.fee.amount',$editData[0]->fee_category_id)}}">
               @csrf
                     
                    <div>
