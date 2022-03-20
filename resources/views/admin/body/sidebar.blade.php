@@ -68,6 +68,10 @@
             <a class="collapse-item" href="{{route('student.shift.view')}}">Student Shift View</a>
             <a class="collapse-item" href="{{route('fee.category.view')}}">Fee Category</a>
             <a class="collapse-item" href="{{route('fee.amount.view')}}">Fee Category Amount</a>
+
+             <a class="collapse-item" href="{{route('exam.type.view')}}">Exam Type</a>
+             <a class="collapse-item" href="{{route('school.subject.view')}}">School Subject </a>
+             <a class="collapse-item" href="{{route('assign.subject.view')}}">Assign Subject </a>
           </div>
         </div>
       </li>
