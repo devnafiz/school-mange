@@ -8,8 +8,14 @@ use App\Models\AssignSubject;
 
 use App\Models\FeeCategoryAmount;
 use App\Models\FeeCategory;
-use App\Models\StudentClass;
+
 use App\Models\SchoolSubject;
+use App\Models\StudentYear;
+use App\Models\StudentClass;
+use App\Models\StudentGroup;
+use App\Models\StudentShift;
+
+
 
 
 class AssignSubjectController extends Controller
@@ -67,5 +73,38 @@ class AssignSubjectController extends Controller
 
           return view('backend.setup.assign_subject.edit_assign_subject',$data);
 
+   }
+
+
+   public function UpdateAssignSubject(Request $request,$class_id){
+
+
+      if($request->subject_id == NUll){
+          return redirect()->route('assign.subject.edit',$class_id);
+      }else{
+          
+          $countSubject= count($request->subject_id);
+
+             AssignSubject::where('class_id',$class_id)->delete();
+         
+           for ($i=0; $i < $countSubject; $i++) { 
+               $subject = new AssignSubject();
+
+               $subject->class_id =$request->class_id;
+               $subject->subject_id =$request->subject_id[$i];
+               $subject->full_mark =$request->full_mark[$i];
+               $subject->pass_mark =$request->pass_mark[$i];
+               $subject->subjective_mark =$request->subjective_mark[$i];
+
+               $subject->save();
+
+
+
+
+           } //forloop
+
+      
+      }//else
+      return redirect()->route('assign.subject.view');
    }
 }

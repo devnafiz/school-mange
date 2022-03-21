@@ -72,6 +72,23 @@
              <a class="collapse-item" href="{{route('exam.type.view')}}">Exam Type</a>
              <a class="collapse-item" href="{{route('school.subject.view')}}">School Subject </a>
              <a class="collapse-item" href="{{route('assign.subject.view')}}">Assign Subject </a>
+
+              <a class="collapse-item" href="{{route('designation.view')}}">Designation</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item {{($prefix =='/students') ? 'active' : ''}}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Students Management</span>
+        </a>
+        <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            
+            <a class="collapse-item" href="{{route('student.registration.view')}}">Student registration</a>
+            
           </div>
         </div>
       </li>

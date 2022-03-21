@@ -13,7 +13,7 @@
 			<a href="{{route('assign.subject.view')}}" class="btn btn-success">Assign Subject list </a>
 			
 		</div>
-            <form method="POST" action="{{route('store.assign.subject')}}">
+            <form method="POST" action="{{route('update.assign.subject',$editData[0]->class_id)}}">
               @csrf
                     
                    <div>
@@ -43,6 +43,7 @@
                       
                     </div>
                  @foreach($editData as $data)  
+                  <div class="delete_whole_extra_item_add" id="delete_whole_extra_item_add">
                    <div class="row">
                       <div class="col-lg-4">
                          <div class="form-group">
@@ -84,7 +85,7 @@
                       </div>
                      
                    </div>
-                    
+                    </div>
                      @endforeach
                    
                      <!-- <div class="form-group">
