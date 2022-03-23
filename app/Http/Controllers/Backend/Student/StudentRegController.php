@@ -24,6 +24,8 @@ use App\Models\DiscountStudent;
 
 use DB;
 
+use PDF;
+
 
 
 class StudentRegController extends Controller
@@ -159,4 +161,18 @@ class StudentRegController extends Controller
 
         return redirect()->route('student.registration.view');
     }
+
+
+    //details 
+     public function StudentRegDetails($student_id){
+
+            $data['details'] = AssignStudent::with(['student','discount'])->where('student_id',$student_id)->first();
+
+            dd($data['details']);
+
+    $pdf = PDF::loadView('backend.student.student_reg.student_details_pdf', $data);
+    $pdf->SetProtection(['copy', 'print'], '', 'pass');
+    return $pdf->stream('document.pdf');
+
+     }
 }

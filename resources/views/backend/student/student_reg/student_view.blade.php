@@ -95,7 +95,10 @@
                                   
                              
                              
-                                <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
+                                <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
+                                  <a href="{{route('student.registration.details',$student->student_id)}}" class="btn btn-danger" ><i class="fa fa-eye"></i>details</a>
+
+                                </td>
                             </tr>
                             
                            @endforeach
@@ -141,7 +144,9 @@
                                     
                                
                                
-                                  <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
+                                  <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
+                                  <a href="{{route('student.registration.details',$student->student_id)}}" class="btn btn-danger" ><i class="fa fa-eye"></i>details</a>
+                                  </td>
                               </tr>
                               
                              @endforeach
