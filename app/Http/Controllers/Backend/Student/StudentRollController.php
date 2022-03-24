@@ -38,8 +38,12 @@ class StudentRollController extends Controller
    }
 
 
-   public function GetStudents(){
+   public function GetStudents(Request $request){
 
-    dd('ok done');
+         $allData=AssignStudent::with(['student'])->where('year_id',$request->year_id)->where('class_id',$request->class_id)->get();
+
+         //dd($allData->toArray());
+
+         return response()->json($allData);
    }
 }
