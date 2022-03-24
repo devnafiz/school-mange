@@ -12,9 +12,17 @@
   <link href="{{asset('userbackend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
   <link href="{{asset('userbackend/css/ruang-admin.min.css')}}" rel="stylesheet">
-   <link href="{{asset('userbackendvendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+   <link href="{{asset('userbackend/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css
 ">
+<!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+  
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+
 </head>
 
 <body id="page-top">
@@ -111,8 +119,8 @@
     });
   </script>
 <!-- Include a required theme -->
-<link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
-<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<!-- <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css"> -->
+<!-- <script src="sweetalert2/dist/sweetalert2.min.js"></script> -->
 
   <script src="{{asset('userbackend/vendor/chart.js/Chart.min.js')}}"></script>
   <script src="{{asset('userbackend/js/demo/chart-area-demo.js')}}"></script>  
@@ -145,6 +153,9 @@
    
      @endif
   </script>
+
+
+
   
 </body>
 
