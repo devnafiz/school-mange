@@ -91,6 +91,7 @@
             <a class="collapse-item" href="{{route('roll.generate.view')}}">Roll generator</a>
 
             <a class="collapse-item" href="{{route('registration.fee.view')}}">Registration view </a>
+            <a class="collapse-item" href="{{route('monthly.fee.view')}}">Monthly fee view </a>
             
           </div>
         </div>

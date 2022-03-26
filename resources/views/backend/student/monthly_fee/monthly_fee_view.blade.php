@@ -7,9 +7,9 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">
-           
+             <h4 class="text-center">Monthly Fee</h4>
             <div class="row">
-               <div class="col-md-4">
+               <div class="col-md-3">
 
                     <select name="year_id" required="" class="form-control" id="year_id">
                   <option value="" selected="" disabled="">Select Year</option>
@@ -21,7 +21,7 @@
                  
                </div>
 
-               <div class="col-md-4">
+               <div class="col-md-3">
 
                      <select name="class_id"  required="" class="form-control" id="class_id">
                     <option value="" selected="" disabled="">Select Class</option>
@@ -33,7 +33,30 @@
                  
                </div>
 
-               <div class="col-md-4">
+                <div class="col-md-3">
+
+                     <select name="month"  required="" class="form-control" id="month">
+                    <option value="" selected="" disabled="">Select month</option>
+                   
+                    <option value="january" >january</option>
+                    <option value="Fabruary" >Fabruary</option>
+                    <option value="March" >March</option>
+                    <option value="April" >April</option>
+                    <option value="May" >May</option> 
+                    <option value="Jun" >Jun</option>
+                    <option value="July" >July</option>
+                    <option value="August" >August</option>
+                    <option value="September" >September</option>
+                    <option value="October" >October</option>
+                    <option value="November" >November</option>
+                    <option value="December" >December</option>
+                  
+                     
+                  </select>
+                 
+               </div>
+
+               <div class="col-md-3">
                   <a  id="search" name="search" class="btn btn-primary">Search</a>
                </div>
              
@@ -92,10 +115,11 @@
   $(document).on('click','#search',function(){
     var year_id = $('#year_id').val();
     var class_id = $('#class_id').val();
+    var month = $('#month').val();
      $.ajax({
-      url: "{{ route('student.registration.fee.classwise.get')}}",
+      url: "{{ route('student.monthly.fee.classwise.get')}}",
       type: "get",
-      data: {'year_id':year_id,'class_id':class_id},
+      data: {'year_id':year_id,'class_id':class_id,'month':month},
       beforeSend: function() {       
       },
       success: function (data) {
