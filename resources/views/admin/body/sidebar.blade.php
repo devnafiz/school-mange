@@ -88,7 +88,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="{{route('student.registration.view')}}">Student registration</a>
-              <a class="collapse-item" href="{{route('roll.generate.view')}}">Roll generator</a>
+            <a class="collapse-item" href="{{route('roll.generate.view')}}">Roll generator</a>
+
+            <a class="collapse-item" href="{{route('registration.fee.view')}}">Registration view </a>
             
           </div>
         </div>
