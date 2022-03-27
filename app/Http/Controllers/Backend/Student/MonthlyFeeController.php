@@ -35,9 +35,9 @@ class MonthlyFeeController extends Controller
            return view('backend.student.monthly_fee.monthly_fee_view',$data);
     }
 
-   public  function MonthlyFeeClassData(Request $request){
 
 
+  public function MonthlyFeeClassData(Request $request){
          $year_id = $request->year_id;
          $class_id = $request->class_id;
          if ($year_id !='') {
@@ -47,7 +47,7 @@ class MonthlyFeeController extends Controller
             $where[] = ['class_id','like',$class_id.'%'];
          }
          $allStudent = AssignStudent::with(['discount'])->where($where)->get();
-         // dd($allStudent);
+          //dd($allStudent);
          $html['thsource']  = '<th>SL</th>';
          $html['thsource'] .= '<th>ID No</th>';
          $html['thsource'] .= '<th>Student Name</th>';
@@ -75,12 +75,26 @@ class MonthlyFeeController extends Controller
 
             $html[$key]['tdsource'] .='<td>'.$finalfee.'$'.'</td>';
             $html[$key]['tdsource'] .='<td>';
-            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("student.registration.fee.payslip").'?class_id='.$v->class_id.'&student_id='.$v->student_id.'&month='.$request->month.'">Fee Slip</a>';
+            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("student.monthly.fee.payslip").'?class_id='.$v->class_id.'&student_id='.$v->student_id.'&month='.$request->month.' ">Fee Slip</a>';
             $html[$key]['tdsource'] .= '</td>';
 
          }  
         return response()->json(@$html);
 
-        
+    }// end method 
+
+     public function MonthlyFeePayslip(Request $request){
+       $student_id = $request->student_id;
+       $class_id  =$request->class_id;
+       $data['month']=$request->month;
+
+       $data['details']= AssignStudent::with(['student','discount'])->where('student_id',$student_id)->where('class_id',$class_id)->first();
+
+       $pdf =PDF::loadView('backend.student.monthly_fee.monthly_fee_pdf',$data);
+
+     $pdf->SetProtection(['copy', 'print'], '', 'pass');
+     $pdf->stream('document.pdf');
+
+
     }
 }

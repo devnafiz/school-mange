@@ -49,7 +49,7 @@ class RegistrationFeeController extends Controller
             $where[] = ['class_id','like',$class_id.'%'];
          }
          $allStudent = AssignStudent::with(['discount'])->where($where)->get();
-         // dd($allStudent);
+          //dd($allStudent);
          $html['thsource']  = '<th>SL</th>';
          $html['thsource'] .= '<th>ID No</th>';
          $html['thsource'] .= '<th>Student Name</th>';
