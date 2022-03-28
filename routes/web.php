@@ -35,6 +35,10 @@ use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
 
+
+
+use App\Http\Controllers\Backend\Employee\EmployeeRegController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -334,6 +338,17 @@ Route::get('/exam/fee/view', [ExamFeeController::class, 'ExamFeeView'])->name('e
 Route::get('/exam/fee/classwisedata', [ExamFeeController::class, 'ExamFeeClassData'])->name('student.exam.fee.classwise.get');
 
 Route::get('/exam/fee/payslip', [ExamFeeController::class, 'ExamFeePayslip'])->name('student.exam.fee.payslip');
+
+
+});
+
+
+Route::prefix('employees')->group(function(){
+
+  Route::get('reg/employee/view',[EmployeeRegController::class,'UserView'])->name('employee.registration.view');
+
+  
+
 
 
 });
