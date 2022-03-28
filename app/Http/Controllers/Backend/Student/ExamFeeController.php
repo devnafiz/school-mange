@@ -39,7 +39,7 @@ class ExamFeeController extends Controller
            return view('backend.student.exam_fee.exam_fee_view',$data);
     }
 
-     public function MonthlyFeeClassData(Request $request){
+     public function ExamFeeClassData(Request $request){
          $year_id = $request->year_id;
          $class_id = $request->class_id;
          if ($year_id !='') {
@@ -84,4 +84,21 @@ class ExamFeeController extends Controller
         return response()->json(@$html);
 
     }// end method 
+
+
+
+     public function ExamFeePayslip(Request $request){
+       $student_id = $request->student_id;
+       $class_id  =$request->class_id;
+       $data['exam_type']=ExamType::where('id',$request->exam_type)->first()['name'];
+
+       $data['details']= AssignStudent::with(['student','discount'])->where('student_id',$student_id)->where('class_id',$class_id)->first();
+
+       $pdf =PDF::loadView('backend.student.exam_fee.exam_fee_pdf',$data);
+
+     $pdf->SetProtection(['copy', 'print'], '', 'pass');
+     $pdf->stream('document.pdf');
+
+
+    }
 }
