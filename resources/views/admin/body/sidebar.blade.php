@@ -92,6 +92,7 @@
 
             <a class="collapse-item" href="{{route('registration.fee.view')}}">Registration view </a>
             <a class="collapse-item" href="{{route('monthly.fee.view')}}">Monthly fee view </a>
+             <a class="collapse-item" href="{{route('exam.fee.view')}}">Exam fee view </a>
             
           </div>
         </div>
