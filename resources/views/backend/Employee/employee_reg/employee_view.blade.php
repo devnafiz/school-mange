@@ -7,7 +7,7 @@
  		<div class="card">
 
  			<div class="card-body">
- 				<a href="{{route('designation.add')}} " class="btn btn-success">Add  employee</a>
+ 				<a href="{{route('employee.registration.add')}} " class="btn btn-success">Add  employee</a>
  				 <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
