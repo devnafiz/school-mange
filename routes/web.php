@@ -345,7 +345,7 @@ Route::get('/exam/fee/payslip', [ExamFeeController::class, 'ExamFeePayslip'])->n
 
 Route::prefix('employees')->group(function(){
 
-  Route::get('reg/employee/view',[EmployeeRegController::class,'UserView'])->name('employee.registration.view');
+  Route::get('reg/employee/view',[EmployeeRegController::class,'EmployeeView'])->name('employee.registration.view');
 
   
 
