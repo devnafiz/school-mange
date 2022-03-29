@@ -34,5 +34,12 @@ class EmployeeRegController extends Controller
     public function EmployeeView(){
 
          $data['allData']=User::where('usertype','Employee')->get();
+         return view('backend.Employee.employee_reg.employee_view',$data);
+    }
+
+
+    public function EmployeeAdd(){
+          $data['designation']=Designation::all();
+        return view('backend.Employee.employee_reg.employee_add',$data);
     }
 }
