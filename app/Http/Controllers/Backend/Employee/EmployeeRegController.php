@@ -134,4 +134,13 @@ class EmployeeRegController extends Controller
         });
          return redirect()->route('employee.registration.view');
     }
+
+
+
+    public function EmployeeEdit($id){
+             $data['editData']= User::find($id); 
+             $data['designation']= Designation::all();
+             return view('backend.Employee.employee_reg.edit_employee',$data);
+
+    }
 }
