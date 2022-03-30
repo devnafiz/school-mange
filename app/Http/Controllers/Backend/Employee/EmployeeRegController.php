@@ -143,4 +143,42 @@ class EmployeeRegController extends Controller
              return view('backend.Employee.employee_reg.edit_employee',$data);
 
     }
+
+
+    public function EmployeeUpdate(Request $request,$id){
+
+              $user =  User::find($id);
+
+               
+               
+                $user->name = $request->name;
+                $user->fname = $request->fname;
+                $user->mname = $request->mname;
+                $user->mobile = $request->mobile;
+                $user->address = $request->address;
+                $user->gender = $request->gender;
+                $user->religion = $request->religion;
+
+                $user->designation_id = $request->designation_id;
+              
+                $user->dob = date('Y-m-d',strtotime($request->dob));
+                
+
+                if($request->file('image')){
+
+
+                    $file=$request->file('image');
+                    unlink(public_path('upload/employee_images/'.$user->image) );
+                    $filename =date('YmdHi').$file->getClientOriginalName();
+
+                    $file->move(public_path('upload/employee_images'),$filename );
+
+                    $user['image']=$filename ;
+                }
+
+                $user->save();
+
+          return redirect()->route('employee.registration.view');
+    }
+    
 }
