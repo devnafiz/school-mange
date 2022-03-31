@@ -35,7 +35,7 @@
                         <div class="form-group">
                           <label for="exampleFormControlInput1"> Effected date</label>
                           <input type="date" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Effected date " name=" effected_salary ">
+                            placeholder="Effected date " name="effected_salary ">
                         </div>
                         
                       </div>
