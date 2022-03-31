@@ -108,6 +108,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="{{route('employee.registration.view')}}">Employee registration</a>
+
+               <a class="collapse-item" href="{{route('employee.salary.view')}}">Employee Salary</a>
            
             
           </div>
