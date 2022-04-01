@@ -51,4 +51,37 @@ class EmployeeLeaveController extends Controller
 
       }
 
+
+       public function LeaveStore(Request $request){
+
+
+        if($request->leave_purpose_id == '0'){
+
+            $leave= new LeavePurpose();
+            $leave->name=$request->name;
+            $leave->save();
+            $leave_purpose_id = $leave->id;
+
+
+        }else{
+
+            $leave_purpose_id = $request->leave_purpose_id;
+
+
+        }
+
+        $employee_leave = new EmployeeLeave();
+         $employee_leave->employee_id = $request->employee_id;  
+         $employee_leave->leave_purpose_id = $leave_purpose_id;
+         $employee_leave->start_date = date('Y-m-d',strtotime($request->start_date));
+                                //$date= $request->start_date;
+
+                                //dd($date);
+         $employee_leave->end_date = date('Y-m-d',strtotime($request->end_date));
+         $employee_leave->save();
+
+        return redirect()->route('employee.leave.view');
+
+     }
+
 }

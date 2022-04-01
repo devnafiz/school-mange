@@ -82,4 +82,6 @@ class EmployeeSalaryController extends Controller
         return view('backend.Employee.employee_salary.employee_salary_details',$data);
 
      }
+
+    
 }
