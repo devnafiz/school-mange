@@ -39,7 +39,7 @@
                        
                        
                        
-                        <td><a href="{{route('employee.salary.increment',$employee->id)}}" class="btn btn-success"><i class="fa fa-plus-circle"></i></a>&nbsp<a href="{{route('employee.registration.details',$employee->id)}}" class="btn btn-danger" ><i class="fa fa-eye"></i></a></td>
+                        <td><a href="{{route('employee.salary.increment',$employee->id)}}" class="btn btn-success"><i class="fa fa-plus-circle"></i></a>&nbsp<a href="{{route('employee.salary.details',$employee->id)}}" class="btn btn-danger" ><i class="fa fa-eye"></i></a></td>
                       </tr>
                       
                      @endforeach

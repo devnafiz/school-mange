@@ -70,4 +70,16 @@ class EmployeeSalaryController extends Controller
           return redirect()->route('employee.salary.view');
 
      }
+
+
+     public function SalaryDetails($id){
+
+        $data['details']=User::find($id);
+
+        $data['salary_log']=EmployeeSallaryLog::where('employee_id',$data['details']->id)->get();
+
+        //dd($data['salary_log']);
+        return view('backend.Employee.employee_salary.employee_salary_details',$data);
+
+     }
 }
