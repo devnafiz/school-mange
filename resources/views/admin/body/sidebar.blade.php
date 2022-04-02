@@ -107,11 +107,12 @@
         <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item" href="{{route('employee.registration.view')}}">Employee registration</a>
+             <a class="collapse-item" href="{{route('employee.registration.view')}}">Employee registration</a>
 
-               <a class="collapse-item" href="{{route('employee.salary.view')}}">Employee Salary</a>
+            <a class="collapse-item" href="{{route('employee.salary.view')}}">Employee Salary</a>
 
-                <a class="collapse-item" href="{{route('employee.leave.view')}}">Employee Leave</a>
+            <a class="collapse-item" href="{{route('employee.leave.view')}}">Employee Leave</a>
+            <a class="collapse-item" href="{{route('employee.attendance.view')}}">Employee Attendance</a>
            
             
           </div>
