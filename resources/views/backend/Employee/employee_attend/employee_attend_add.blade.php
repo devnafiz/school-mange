@@ -22,18 +22,7 @@
 
                  
 
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Emplyee Name</label>
-                           <select class="form-control" id="exampleFormControlSelect1" name="employee_id">
-                                  <option value="">Select Name</option>
-                                @foreach($employees as $employee)
-                                  <option value="{{$employee->id}}">{{$employee->name}}</option>
-                                  @endforeach
-                                 </select>
-                        </div>
-                        
-                      </div>
+                      
                       <div class="col-md-6">
 
                         <div class="form-group">
@@ -72,22 +61,29 @@
                                          </tr>
                                   </thead>
                                   <tbody>
-                                       <tr>
-                                         <td>SL</td>
-                                         <td>Employee list</td>
+
+                                      @foreach($employees as $key=>$employee)
+                                       <tr id="div{{$employee->id}}">
+                                        <input type="hidden" name="employee_id[]" value="{{$employee->id}}">
+                                         <td>{{$key+1}}</td>
+                                         <td>{{$employee->name}}</td>
                                          <td colspan="3">
                                             <div class="switch-toggle switch-3 switch-candy">
-                                              <input type="radio" name="attend_status" checked id="radio_1">
-                                              <label for="radio_1">present</label>
-                                               <input type="radio" name="attend_status"  id="radio_2">
-                                              <label for="radio_2">Leave</label>
-                                               <input type="radio" name="attend_status"  id="radio_3">
-                                              <label for="radio_3">Absent</label>
+                                              <input type="radio" name="attend_status{{$key}}" value="Present" checked id="Present{{$key}}" checked="checked">
+                                              <label for="Present{{$key}}">present</label>
+
+                                               <input type="radio" name="attend_status{{$key}}" value="Leave" id="Leave{{$key}}">
+                                              <label for="Leave{{$key}}">Leave</label>
+
+                                               <input type="radio" name="attend_status{{$key}}" value="Absent"  id="Absent{{$key}}">
+                                              <label for="Absent{{$key}}">Absent</label>
                                               
                                             </div>
                                            
                                          </td>
                                        </tr>
+                                        @endforeach
+
                                   </tbody>
                                   
 

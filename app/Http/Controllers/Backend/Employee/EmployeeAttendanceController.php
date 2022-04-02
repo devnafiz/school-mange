@@ -50,4 +50,9 @@ class EmployeeAttendanceController extends Controller
 
 
      }
+
+     public function AttendanceStore(){
+
+        
+     }
 }
