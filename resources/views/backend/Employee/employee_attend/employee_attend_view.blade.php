@@ -7,7 +7,7 @@
  		<div class="card">
 
  			<div class="card-body">
- 				<a href="{{route('employee.leave.add')}} " class="btn btn-success">Add Emplyee Attendance</a>
+ 				<a href="{{route('employee.attendance.add')}} " class="btn btn-success">Add Emplyee Attendance</a>
  				 <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
                       <tr>
