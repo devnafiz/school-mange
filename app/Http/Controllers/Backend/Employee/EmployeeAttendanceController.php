@@ -53,6 +53,8 @@ class EmployeeAttendanceController extends Controller
      }
 
      public function AttendanceStore(Request $request){
+
+        EmployeeAttendance::where('date',date('Y-m-d',strtotime($request->date)))->delete();
           $countEmployee=count($request->employee_id);
 
           for ($i=0; $i <  $countEmployee ; $i++) {
