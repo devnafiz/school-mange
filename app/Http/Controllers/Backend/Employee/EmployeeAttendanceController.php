@@ -36,7 +36,8 @@ class EmployeeAttendanceController extends Controller
 {
      public function AttendanceView(){
 
-            $data['allData']=EmployeeAttendance::orderBy('id','desc')->get();
+            $data['allData']=EmployeeAttendance::select('date')->groupBy('date')->orderBy('id','desc')->get();
+             //$data['allData']=EmployeeAttendance::orderBy('id','desc')->get();
 
             return view('backend.Employee.employee_attend.employee_attend_view',$data);
 
@@ -51,8 +52,24 @@ class EmployeeAttendanceController extends Controller
 
      }
 
-     public function AttendanceStore(){
+     public function AttendanceStore(Request $request){
+          $countEmployee=count($request->employee_id);
 
+          for ($i=0; $i <  $countEmployee ; $i++) {
+
+              $attend_status ='attend_status'.$i;
+
+              $attend = new EmployeeAttendance();
+
+              $attend->employee_id =$request->employee_id[$i];
+              $attend->date =date('Y-m-d',strtotime($request->date));
+              $attend->attend_status =$request->$attend_status;
+              $attend->save();
+
+
+              
+          }
+          return redirect()->route('employee.attendance.view');
         
      }
 }
