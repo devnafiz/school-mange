@@ -72,4 +72,15 @@ class EmployeeAttendanceController extends Controller
           return redirect()->route('employee.attendance.view');
         
      }
+
+
+     public function AttendanceEdit($date){
+
+              $data['editData']=EmployeeAttendance::where('date',$date)->get();
+              $data['employees']=User::where('usertype','Employee')->get();
+
+              return view('backend.Employee.employee_attend.employee_attend_edit',$data);
+
+
+     }
 }

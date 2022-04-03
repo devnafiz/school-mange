@@ -32,7 +32,7 @@
                           
                        
                        
-                        <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a></td>
+                        <td><a href="{{route('employee.attendance.edit',$attend->date)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" ><i class="fa fa-trash"></i></a></td>
                       </tr>
                       
                      @endforeach
