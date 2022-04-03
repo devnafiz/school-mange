@@ -12,27 +12,29 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        
+                        <th>Name</th>
+                        <th>ID No</th>
                         <th>Date</th>
-                       
+                        <th>Attend Status</th>
                         
                      
-                        <th>Action</th>
+                       
                       </tr>
                     </thead>
                   
                     <tbody>
 
-                    	@foreach($allData as $k=>$attend)
+                      @foreach($details as $k=>$attend)
                       <tr>
                         <td>{{$k+1}}</td>
-                       
+                         <td>{{$attend['user']['name']}}</td>
+                         <td>{{$attend['user']['id_no']}}</td>
                          <td>{{$attend->date}}</td>
-                        
+                          <td>{{$attend->attend_status}}</td>
                           
                        
                        
-                        <td><a href="{{route('employee.attendance.edit',$attend->date)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="{{route('employee.attendance.details',$attend->date)}}" class="btn btn-danger" ><i class="fa fa-eye"></i></a></td>
+                     
                       </tr>
                       
                      @endforeach

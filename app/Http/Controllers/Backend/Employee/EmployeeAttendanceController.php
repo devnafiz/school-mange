@@ -85,4 +85,12 @@ class EmployeeAttendanceController extends Controller
 
 
      }
+
+     public function AttendanceDetails($date){
+
+           $data['details']=EmployeeAttendance::where('date',$date)->get();
+
+            return view('backend.Employee.employee_attend.employee_attend_details',$data);
+
+     }
 }
