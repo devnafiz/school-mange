@@ -44,6 +44,8 @@ use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 
 use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 
+use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -402,6 +404,12 @@ Route::get('attendance/employee/details/{date}', [EmployeeAttendanceController::
 
 
 
+// Employee Monthly Salary All Routes 
+Route::get('monthly/salary/view', [MonthlySalaryController::class, 'MonthlySalaryView'])->name('employee.monthly.salary');
+
+Route::get('monthly/salary/get', [MonthlySalaryController::class, 'MonthlySalaryGet'])->name('employee.monthly.salary.get');
+
+Route::get('monthly/salary/payslip/{employee_id}', [MonthlySalaryController::class, 'MonthlySalaryPayslip'])->name('employee.monthly.salary.payslip');
 
 
 

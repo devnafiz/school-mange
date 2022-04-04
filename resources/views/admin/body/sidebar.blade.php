@@ -113,6 +113,7 @@
 
             <a class="collapse-item" href="{{route('employee.leave.view')}}">Employee Leave</a>
             <a class="collapse-item" href="{{route('employee.attendance.view')}}">Employee Attendance</a>
+             <a class="collapse-item" href="{{route('employee.monthly.salary')}}">Employee monthly salary</a>
            
             
           </div>
