@@ -90,8 +90,20 @@ class MonthlySalaryController extends Controller
         
      }
 
-     public function MonthlySalaryPayslip(){
+     public function MonthlySalaryPayslip(Request $request,$employee_id){
 
+       $id =EmployeeAttendance::where('employee_id',$employee_id)->first();
+       $date =date('Y-m-d',strtotime($id->date));
 
+       if(!$date==''){
+
+          $where[] =['date','like',$date.'%'];
+       }
+
+       $data['details']=EmployeeAttendance::with(['user'])->where($where)->where('employee_id',$employee_id)->get();
+
+       $pdf =PDF::loadView('backend.Employee.monthly_salary.monthly_salary_pdf',$data);
+       $pdf->SetProtection(['copy','print'],'','pass');
+       return $pdf->stream('document.pdf');
      }
 }
