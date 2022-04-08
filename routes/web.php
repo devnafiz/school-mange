@@ -46,6 +46,8 @@ use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 
 use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 
+use App\Http\Controllers\Backend\Marks\MarksController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -412,5 +414,19 @@ Route::get('monthly/salary/get', [MonthlySalaryController::class, 'MonthlySalary
 Route::get('monthly/salary/payslip/{employee_id}', [MonthlySalaryController::class, 'MonthlySalaryPayslip'])->name('employee.monthly.salary.payslip');
 
 
+
+});
+
+Route::prefix('marks')->group(function(){
+
+    Route::get('marks/entry/add', [MarksController::class, 'MarksAdd'])->name('marks.entry.add');
+
+Route::post('marks/entry/store', [MarksController::class, 'MarksStore'])->name('marks.entry.store'); 
+
+Route::get('marks/entry/edit', [MarksController::class, 'MarksEdit'])->name('marks.entry.edit'); 
+
+Route::get('marks/getstudents/edit', [MarksController::class, 'MarksEditGetStudents'])->name('student.edit.getstudents');
+
+Route::post('marks/entry/update', [MarksController::class, 'MarksUpdate'])->name('marks.entry.update');  
 
 });

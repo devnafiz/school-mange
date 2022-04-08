@@ -119,6 +119,23 @@
           </div>
         </div>
       </li>
+
+      <li class="nav-item {{($prefix =='/marks') ? 'active' : ''}}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Marks Management</span>
+        </a>
+        <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            
+             <a class="collapse-item" href="{{route('mark.entry.view')}}">Mark Entry</a>
+
+           
+            
+          </div>
+        </div>
+      </li>
       
       <li class="nav-item">
         <a class="nav-link" href="ui-colors.html">
