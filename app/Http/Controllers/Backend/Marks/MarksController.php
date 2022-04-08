@@ -21,6 +21,7 @@ use App\Models\StudentGroup;
 use App\Models\StudentShift;
 use App\Models\DiscountStudent;
 use App\Models\StudentMarks;
+use App\Models\ExamType;
 
 
 use DB;
@@ -31,6 +32,9 @@ class MarksController extends Controller
 {
       public function MarksAdd(){
 
-
+          $data['years']=StudentYear::all();
+          $data['classes']=StudentClass::all();
+          $data['exam_type']=ExamType::all();
+          return view('backend.marks.add_mark',$data);
       }
 }

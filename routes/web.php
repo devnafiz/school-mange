@@ -47,6 +47,7 @@ use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 
 use App\Http\Controllers\Backend\Marks\MarksController;
+use App\Http\Controllers\Backend\DefaultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -430,3 +431,5 @@ Route::get('marks/getstudents/edit', [MarksController::class, 'MarksEditGetStude
 Route::post('marks/entry/update', [MarksController::class, 'MarksUpdate'])->name('marks.entry.update');  
 
 });
+
+Route::get('marks/getsubject', [DefaultController::class, 'GetSubject'])->name('marks.getsubject');

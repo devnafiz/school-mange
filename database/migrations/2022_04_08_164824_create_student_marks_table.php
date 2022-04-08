@@ -19,7 +19,7 @@ class CreateStudentMarksTable extends Migration
             $table->string('id_no')->nullable();
             $table->integer('year_id')->nullable();
             $table->integer('class_id')->nullable();
-            $table->integer('assign_student_id')->nullable();
+            $table->integer('assign_subject_id')->nullable();
             $table->double('marks')->nullable();
 
             $table->timestamps();
