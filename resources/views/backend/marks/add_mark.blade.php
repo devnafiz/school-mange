@@ -6,7 +6,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">
-           <form method="POST" action="{{route('roll.generate.store')}}">
+           <form method="POST" action="{{route('marks.entry.store')}}">
             @csrf
             <div class="row">
                <div class="col-md-3">
@@ -82,6 +82,8 @@
                       </tbody>
                     
                   </table>
+                    <br/>
+                  <input type="submit" class="btn btn-rounded btn-primary" value="submit">
                    
                  </div>
                    
