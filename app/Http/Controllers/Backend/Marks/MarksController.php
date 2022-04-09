@@ -34,7 +34,7 @@ class MarksController extends Controller
 
           $data['years']=StudentYear::all();
           $data['classes']=StudentClass::all();
-          $data['exam_type']=ExamType::all();
+          $data['exam_types']=ExamType::all();
           return view('backend.marks.add_mark',$data);
       }
 }

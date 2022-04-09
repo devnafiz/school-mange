@@ -35,8 +35,20 @@
                <div class="col-md-3">
 
                      <select name="assign_subject_id"  required="" class="form-control" id="assign_subject_id">
-                    <option value="" selected="" disabled="">Select Subject</option>
+                    <option value="" selected="" >Select Subject</option>
                    
+                     
+                  </select>
+                 
+               </div>
+
+                <div class="col-md-3">
+
+                     <select name="exam_type_id"  required="" class="form-control" id="exam_type_id">
+                    <option value="" selected="" disabled="">Select Exam</option>
+                     @foreach($exam_types as $exam)
+                    <option value="{{ $exam->id }}" >{{ $exam->name }}</option>
+                    @endforeach
                      
                   </select>
                  
@@ -134,47 +146,25 @@
    });
  </script>
 
-  <script>
-
-
-   
-
-       
-     $(document).on('click','#search',function (){
-
-    //alert('hi');
-
-
-      
-       
-
-
-     });
-
-
-
-
-
-
   
 
- </script>
-
  <script >
-     $(document).ready(function(){
+    $(function(){
 
           $(document).on('change','#class_id',function(){
              var class_id =$('#class_id').val();
 
+             //alert(class_id);
+
              $.ajax({
 
-                  url:"{{route('mark.getSubject')}}",
+                  url:"{{ route('marks.getsubject') }}",
                   type:"GET",
-                  data:{'class_id':class_id}
-                  success:function(data){
+                  data:{class_id:class_id},
+                  success: function(data){
 
 
-                          var html ="<option value="">Select Subject</option>";
+                          var html ='<option value="">Select Subject</option>';
 
                           $.each(data,function(key,v){
 
