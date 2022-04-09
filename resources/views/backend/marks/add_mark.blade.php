@@ -61,7 +61,7 @@
 
             </div>
 
-            <div class="row d-none" id="roll_generate">
+            <div class="row d-none" id="mark_entry">
                  <div class="col-md-12">
                   <table class="table table-bordered" style="width:100%">
 
@@ -71,13 +71,13 @@
                              <th>Student Name</th>
                              <th>Father Name</th>
                              <th>Gender</th>
-                             <th>Roll</th>
+                             <th>Mark</th>
                             
 
 
                         </tr>
                       </thead>
-                      <tbody id="roo-generate_tr">
+                      <tbody id="mark_entry_tr">
                         
                       </tbody>
                     
@@ -108,31 +108,34 @@
        var year_id = $('#year_id').val();
 
        var class_id = $('#class_id').val();
+       var assign_subject_id=$('#assign_subject_id').val();
+       var exam_type_id=$('#exam_type_id').val();
+
 
  
          $.ajax({
 
-               url: "{{route('student.registration.getstudents')}}",
+               url: "{{route('student.marks.getstudents')}}",
                type: "GET",
                data: {'year_id':year_id,'class_id':class_id},
 
                success: function(data){
-                  $("#roll_generate").removeClass('d-none');
+                  $("#mark_entry").removeClass('d-none');
                   var html = '';
 
                   $.each(data, function(key, v){
 
                     html +=
                          '<tr>'+
-                              '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.student_id+'"></td>'+
+                              '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.student_id+'"><input type="hidden" name="id_no[]" value="'+v.student.id_no+'"></td>'+
                               '<td>'+v.student.name+'</td>'+
                               '<td>'+v.student.fname+'</td>'+
                               '<td>'+v.student.gender+'</td>'+
-                              '<td><input type="text" name="roll[]" value="'+v.roll+'"></td>'+
+                              '<td><input type="text" name="marks[]" ></td>'+
                               '</tr>';
 
                        });
-                html = $('#roo-generate_tr').html(html);
+                html = $('#mark_entry_tr').html(html);
 
 
                }

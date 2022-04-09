@@ -433,3 +433,5 @@ Route::post('marks/entry/update', [MarksController::class, 'MarksUpdate'])->name
 });
 
 Route::get('marks/getsubject', [DefaultController::class, 'GetSubject'])->name('marks.getsubject');
+
+Route::get('student/marks/getstudent', [DefaultController::class, 'getStudents'])->name('student.marks.getstudents');
