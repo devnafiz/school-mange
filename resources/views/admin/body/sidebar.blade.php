@@ -130,6 +130,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
              <a class="collapse-item" href="{{route('marks.entry.add')}}">Mark Entry</a>
+            <a class="collapse-item" href="{{route('marks.entry.edit')}}">Mark Edit</a>
 
            
             
