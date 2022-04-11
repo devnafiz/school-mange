@@ -43,4 +43,29 @@ class GradeController extends Controller
 
         return view('backend.marks.grade_mark_add');
     }
+
+
+    public function MarksGradeStore(Request $request){
+
+
+              $grade = new  MarksGrade();
+              $grade->grade_name =$request->grade_name;
+              $grade->grade_point =$request->grade_point;
+              $grade->start_marks =$request->start_marks;
+              $grade->end_marks =$request->end_marks;
+              $grade->start_point =$request->start_point;
+              $grade->end_point =$request->end_point;
+              $grade->remarks =$request->remarks;
+              $grade->save();
+
+              return redirect()->route('marks.entry.grade');
+    }
+
+
+    public function MarksGradeEdit($id){
+           $data['editData']=MarksGrade::find($id);
+
+              return view('backend.marks.grade_mark_edit',$data);
+
+    }
 }

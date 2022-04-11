@@ -38,7 +38,7 @@
                       
                        
                        
-                        <td><a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" ><i class="fa fa-eye"></i>Details</a></td>
+                        <td><a href="{{route('marks.grade.edit',$mark->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>&nbsp<a href="" class="btn btn-danger" ><i class="fa fa-eye"></i></a></td>
                       </tr>
                       
                      @endforeach
