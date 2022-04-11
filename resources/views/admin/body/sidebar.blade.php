@@ -129,8 +129,10 @@
         <div id="collapseBootstrap44" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-             <a class="collapse-item" href="{{route('marks.entry.add')}}">Mark Entry</a>
+             <a class="collapse-item {{($route =='marks.entry.add') ? 'active show' : ''}}" href="{{route('marks.entry.add')}}">Mark Entry</a>
             <a class="collapse-item" href="{{route('marks.entry.edit')}}">Mark Edit</a>
+
+             <a class="collapse-item" href="{{route('marks.entry.grade')}}">Mark Grade</a>
 
            
             
