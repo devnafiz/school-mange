@@ -139,6 +139,24 @@
           </div>
         </div>
       </li>
+
+
+      <li class="nav-item {{($prefix =='/accounts') ? 'active' : ''}}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap45"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Accounts Management</span>
+        </a>
+        <div id="collapseBootstrap45" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            
+             <a class="collapse-item {{($route =='student.fee.view') ? 'active show' : ''}}" href="{{route('student.fee.view')}}">Student Fee</a>
+            
+           
+            
+          </div>
+        </div>
+      </li>
       
       <li class="nav-item">
         <a class="nav-link" href="ui-colors.html">

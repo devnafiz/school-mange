@@ -50,6 +50,8 @@ use App\Http\Controllers\Backend\Marks\MarksController;
 use App\Http\Controllers\Backend\DefaultController;
 use App\Http\Controllers\Backend\Marks\GradeController;
 
+use App\Http\Controllers\Backend\Account\StudentFeeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -448,3 +450,15 @@ Route::post('marks/grade/update/{id}', [GradeController::class, 'MarksGradeUpdat
 Route::get('marks/getsubject', [DefaultController::class, 'GetSubject'])->name('marks.getsubject');
 
 Route::get('student/marks/getstudent', [DefaultController::class, 'getStudents'])->name('student.marks.getstudents');
+
+
+Route::prefix('accounts')->group(function(){
+
+
+
+Route::get('accounts/fee/view', [StudentFeeController::class, 'StudentFeeView'])->name('student.fee.view');
+
+
+
+
+});
