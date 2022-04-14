@@ -151,6 +151,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
              <a class="collapse-item {{($route =='student.fee.view') ? 'active show' : ''}}" href="{{route('student.fee.view')}}">Student Fee</a>
+
+             <a class="collapse-item {{($route =='account.salary.view') ? 'active show' : ''}}" href="{{route('account.salary.view')}}">Employee Salary   view</a>
             
            
             
