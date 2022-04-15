@@ -113,6 +113,45 @@ class AccountSalaryController extends Controller
 
     public function AccountSalaryStore(Request $request){
 
+        $date=date('Y-m',strtotime($request->date));
+
+            AccountSalary::where('date',$date)->delete();
+
+            $checkdata =$request->checkmanage;
+
+            if($checkdata !=null){
+
+               for ($i=0; $i < count($checkdata); $i++) { 
+
+                   $data = new AccountSalary();
+                   $data->date = $date; 
+                  $data->employee_id = $request->employee_id[$checkdata[$i]]; 
+                  $data->amount = $request->amount[$checkdata[$i]]; 
+                  $data->save();
+               }
+
+            }
+
+
+        if (!empty(@$data) || empty($checkdata)) {
+
+        $notification = array(
+            'message' => 'Well Done Data Successfully Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('account.salary.view');
+        }else{
+
+            $notification = array(
+            'message' => 'Sorry Data not Saved',
+            'alert-type' => 'error'
+        );
+
+        return redirect()->back();
+
 
     }
+}
+
 }

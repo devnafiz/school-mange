@@ -153,6 +153,9 @@
              <a class="collapse-item {{($route =='student.fee.view') ? 'active show' : ''}}" href="{{route('student.fee.view')}}">Student Fee</a>
 
              <a class="collapse-item {{($route =='account.salary.view') ? 'active show' : ''}}" href="{{route('account.salary.view')}}">Employee Salary   view</a>
+
+              <a class="collapse-item {{($route =='other.cost.view') ? 'active show' : ''}}" href="{{route('other.cost.view')}}">other Cost</a>
+            
             
            
             

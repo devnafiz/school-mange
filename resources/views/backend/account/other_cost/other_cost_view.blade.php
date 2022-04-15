@@ -10,7 +10,7 @@
  		<div class="card">
 
  			<div class="card-body">
- 				<a href="{{route('account.salary.add')}} " class="btn btn-success"> Add Employee salary</a>
+ 				<a href="{{route('other.cost.add')}} " class="btn btn-success"> Add   other Cost</a>
 
       
        				 <table class="table align-items-center table-flush" id="dataTable">
@@ -18,10 +18,10 @@
                             <tr>
                               <th width="5%">SL</th>
                              
-                            <th>ID No</th>
-                            <th>Name</th>
+                            <th>Date</th>
                             <th>Amount</th>
-                            
+                            <th>Description</th>
+                            <th>image</th>
                          
                              
                            
@@ -31,18 +31,22 @@
                          
                           <tbody>
 
-                          	@foreach($allData as $k=>$employee)
+                          	@foreach($allData as $k=>$cost)
                             <tr>
                                <td>{{$k+1}}</td>
-                               <td>{{$employee['user']['id_no']}}</td>
+                               <td>{{$cost->date}}</td>
 
-                               <td>{{$employee['user']['name']}}</td>
-                               <td>{{$employee->amount}}</td>
+                               <td>{{$cost->amount}}</td>
+                               <td>{{$cost->description}}</td>
 
-                                <td>{{$employee->date}}</td>
+                                <td><img src="{{ (!empty($cost->image)) ? url('uploads/other_cost/'.$cost->image) :url('uploads/no-image.jpg')}}"></td>
                               
                               
-                                  
+                                  <td>
+                                    
+                                    <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                    <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                  </td>
                              
                              
                                 

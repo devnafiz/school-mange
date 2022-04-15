@@ -33,6 +33,7 @@
                                 
 
                              <form action="{{route('account.salary.store')}}" method="post">
+                                @csrf
                            
                             <table class="table table-bordered"  style="width:100%">
                                 <thead>
