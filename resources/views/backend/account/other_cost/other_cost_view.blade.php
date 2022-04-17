@@ -44,7 +44,7 @@
                               
                                   <td>
                                     
-                                    <a href="" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                    <a href="{{route('edit.other.cost',$cost->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                                     <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                   </td>
                              
