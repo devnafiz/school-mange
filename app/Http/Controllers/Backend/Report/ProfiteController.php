@@ -33,40 +33,30 @@ class ProfiteController extends Controller
 
             $other_cost = AccountOtherCost::whereBetween('date',[$sdate,$edate])->sum('amount');
 
-             $student_fee = AccountStudentFee::whereBetween('date',[$start_date,$end_date])->sum('amount');
-
-       $html['thsource'] = '<th>SL</th>';
-       $html['thsource'] .= '<th>Employee Name</th>';
-       $html['thsource'] .= '<th>Basic Salary</th>';
-       $html['thsource'] .= '<th>Salary This month</th>';
+             $employees_salary = AccountSalary::whereBetween('date',[$start_date,$end_date])->sum('amount');
+        $totalCost=$other_cost +$employees_salary;
+        $profit = $student_fee- $student_fee;
+       $html['thsource'] = '<th>Student Fee</th>';
+       $html['thsource'] .= '<th>Other cost</th>';
+       $html['thsource'] .= '<th>Employee salary</th>';
+       $html['thsource'] .= '<th>Total Cost</th>';
+       $html['thsource'] .= '<th>Profit</th>';
        $html['thsource'] .= '<th>Action</th>';
 
-       foreach($data as $key =>$attend){
-
-         $totalattend =EmployeeAttendance::with(['user'])->where($where)->where('employee_id',$attend->employee_id)->get();
-         $absentCount= count($totalattend->where('attend_status','absent'));
-         //dd($absentCount);
-
-         $color ='success';
-         $html[$key]['tdsource'] = '<td>'.($key+1).'</td>';
-         $html[$key]['tdsource'] .= '<td>'.$attend['user']['name'].'</td>';
-         $html[$key]['tdsource'] .= '<td>'.$attend['user']['salary'].'</td>';
-
-         $salary = (float)$attend['user']['salary'];
-         $salaryPerDay = (float)$salary/30;
-         $totalsalaryminus =(float)$salaryPerDay*$absentCount;
-         $totalsalary=(float)$salary-(float)$totalsalaryminus;
-
-
-         $html[$key]['tdsource'] .= '<td>'.$totalsalary.'</td>';
-
-        $html[$key]['tdsource'] .= '<td>';
+        $color ='success';
+        $html['tdsource'] = '<td>'. $student_fee.'</td>';
+        $html['tdsource'] .= '<td>'. $other_cost.'</td>';
+        $html['tdsource'] .= '<td>'. $employees_salary.'</td>';
+        $html['tdsource'] .= '<td>'. $totalCost.'</td>';
+        $html['tdsource'] .= '<td>'. $profit.'</td>';
+         $html['tdsource'] .= '<td>';
 
             
-        $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("employee.monthly.salary.payslip",$attend->employee_id).'">Fee Slip</a>';
+        $html['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("report.profit.pdf").'?start_date='. $sdate.'&end_date='.$edate.'">pay Slip</a>';
 
-        $html[$key]['tdsource'] .= '</td>';
-       }
+        $html['tdsource'] .= '</td>';
+       
+
 
        return response()->json(@$html);
 
