@@ -26,8 +26,8 @@ class ProfiteController extends Controller
 
          $start_date = date('Y-m',strtotime($request->start_date));
           $end_date = date('Y-m',strtotime($request->end_date));
-            $sdate = date('Y-m-d',strtotime($request->start_date));
-             $edate = date('Y-m-d',strtotime($request->end_date));
+          $sdate = date('Y-m-d',strtotime($request->start_date));
+         $edate = date('Y-m-d',strtotime($request->end_date));
 
             $student_fee = AccountStudentFee::whereBetween('date',[$start_date,$end_date])->sum('amount');
 
@@ -61,5 +61,19 @@ class ProfiteController extends Controller
        return response()->json(@$html);
 
 
+    }
+
+    public function MonthlyProfitPdf(Request $request){
+
+         $start_date = date('Y-m',strtotime($request->start_date));
+          $end_date = date('Y-m',strtotime($request->end_date));
+          $sdate = date('Y-m-d',strtotime($request->start_date));
+         $edate = date('Y-m-d',strtotime($request->end_date));
+
+        $data['details']=EmployeeAttendance::with(['user'])->where($where)->where('employee_id',$employee_id)->get();
+
+       $pdf =PDF::loadView('backend.Employee.monthly_salary.monthly_salary_pdf',$data);
+       $pdf->SetProtection(['copy','print'],'','pass');
+       return $pdf->stream('document.pdf');
     }
 }
